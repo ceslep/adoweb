@@ -78,7 +78,7 @@ $(document).ready(_ => {
 		paciente: ".paciente",
 		especialidad: ".especialidad",
 		citasind: ".citasind",
-		
+
 
 	});
 
@@ -316,7 +316,7 @@ $(document).ready(_ => {
 		if (user === null) {
 			$("#btnLogin").addClass("disabled");
 			$(".loadini").removeClass("d-none");
-			$("#spinnerload").removeClass("d-none");
+			$(".spinnerload").removeClass("d-none");
 			$("#infologin").addClass("d-none");
 			let datosLogin = $("#frmLogin").serializeObject();
 			//let datosLogin={'usuario':$("#usuario").val(),'password':$("#password").val(),};
@@ -369,14 +369,27 @@ $(document).ready(_ => {
 		}
 		else {
 
-			$("#nologinModal").modal("show");
+			//			$("#nologinModal").modal("show");
+			Swal.fire({
+				icon:'error',
+				title: 'Error',
+				'text':'Acceso Denegado',
+				background:'tomato',
+				footer:'El nombre de usuario o la clave son incorrectos',
+				showClass: {
+					popup: 'animate__animated animate__bounceInUp'
+				},
+				hideClass: {
+					popup: 'animate__animated animate__flipOutX'
+				}
+			});
 			$("#usuario").val("");
 			$("#password").val("");
 			$("#usuario").focus();
 			$("#infologin").removeClass("d-none");
 			$("#btnLogin").removeClass("disabled");
 			$(".loadini").addClass("d-none");
-			$("#spinnerload").addClass("d-none");
+			$(".spinnerload").addClass("d-none");
 		}
 
 	}
@@ -2379,7 +2392,7 @@ $(document).ready(_ => {
 		  </div>
 			`
 		});
-		html+="</div>";
+		html += "</div>";
 		return html;
 
 	}
@@ -2392,10 +2405,10 @@ $(document).ready(_ => {
 		dnone();
 		$(".cards").removeClass("d-none");
 		let dataTarjetas = await getTarjetas();
-		
+
 		$(".cards").empty().html(dataTarjetas);
-		
-		
+
+
 	});
 
 });
