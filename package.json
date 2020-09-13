@@ -20,7 +20,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "jquery": "^3.5.1",
     "jquery-param": "^1.0.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "path": "^0.12.7",
     "socket.io": "^2.3.0"
   },
